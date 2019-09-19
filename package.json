@@ -1,0 +1,12 @@
+{
+  "name": "patient-to-csv",
+  "version": "1.0.0",
+  "main": "patient-to-csv.js",
+  "repository": "git@github.com:FluxNotes/patient-to-csv.git",
+  "author": "Matthew Gramigna <mgramigna@mitre.org>",
+  "dependencies": {
+    "commander": "^3.0.1",
+    "json2csv": "^4.5.3",
+    "lodash": "^4.17.15"
+  }
+}
