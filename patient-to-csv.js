@@ -66,8 +66,15 @@ entries.forEach(entry => {
       }, 'Vitals');
       break;
     case 'BloodPressure':
+      const systolicComponent = entry.Components.find(c => getNamespace(c.EntryType.Value) === 'SystolicPressure');
+      const diastolicComponent = entry.Components.find(c => getNamespace(c.EntryType.Value) === 'DiastolicPressure');
+
       addRow({
-        'Blood Pressure': `${getVitalValue(entry.Components[0].DataValue, false)}/${getVitalValue(entry.Components[1].DataValue, false)}`
+        'Systolic Blood Pressure': getVitalValue(systolicComponent.DataValue, false)
+      }, 'Vitals');
+
+      addRow({
+        'Diastolic Blood Pressure': getVitalValue(diastolicComponent.DataValue, false)
       }, 'Vitals');
       break;
     case 'MedicationStatement':
